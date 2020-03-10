@@ -66,14 +66,11 @@ class HashTable:
 
 
     def retrieve(self, key):
-        '''
-        Retrieve the value stored with the given key.
-
-        Returns None if the key is not found.
-
-        Fill this in.
-        '''
-        pass
+        if self.storage[key] is not None:
+            return    # not sure if I need to return self.storage[key]
+        else:
+            return None
+        
 
 
     def resize(self):
