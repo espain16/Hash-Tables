@@ -58,14 +58,11 @@ class HashTable:
 
 
     def remove(self, key):
-        '''
-        Remove the value stored with the given key.
-
-        Print a warning if the key is not found.
-
-        Fill this in.
-        '''
-        pass
+        if self.key is not None:
+            self.storage[key] -= 1
+            self.count -= 1
+        else:
+            print('Error Message: Key is not found')
 
 
     def retrieve(self, key):
