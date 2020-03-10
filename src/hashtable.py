@@ -16,7 +16,7 @@ class HashTable:
         self.capacity = capacity  # Number of buckets in the hash table
         self.storage = [None] * capacity
         self.count = 0 
-        self.key = key
+        self.key = key # i'm not sure why I get the error key is undefined so I added this but there is still something wrong 
 
 
     def _hash(self, key):
@@ -74,13 +74,12 @@ class HashTable:
 
 
     def resize(self):
-        '''
-        Doubles the capacity of the hash table and
-        rehash all key/value pairs.
-
-        Fill this in.
-        '''
-        pass
+        self.capacity *= 2
+        new_storage = [None] * self.capacity
+        for i in range(self.count):
+            new_storage[i] = self.storage[i]
+        self.storage = new_storage
+    
 
 
 
